@@ -2,7 +2,7 @@
 """
 Created on Tue Oct 15 10:37:48 2024
 
-@author: mffigarola
+@author: mfernandezfigarola
 """
 import pandas as pd
 from selenium import webdriver
@@ -14,7 +14,8 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
 # Crear el servicio para ChromeDriver
-service = Service("C:/Users/mffigarola/OneDrive - Edenor/Documentos/chromedriver-win64/chromedriver.exe")
+#Especificar la ruta a la direccion de chromedriver
+service = Service("Ruta/chromedriver.exe")
 
 # Inicializar el navegador
 driver = webdriver.Chrome(service=service)
@@ -25,7 +26,7 @@ driver.get('https://www.facebook.com/marketplace')
 # Aquí deberías iniciar sesión si es necesario
 time.sleep(30)  # Esperar para que inicies sesión manualmente o usar Selenium para llenar los datos
 
-# Leer el archivo de Excel
+# Leer el archivo de Excel con los links de las publicaciones
 df = pd.read_excel('links facebook.xlsx', sheet_name='links')
 
 # Suponiendo que las URLs están en una columna llamada 'URL'
